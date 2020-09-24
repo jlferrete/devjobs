@@ -15,6 +15,7 @@ class CreateVacantesTable extends Migration
     {
         Schema::create('vacantes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('categoria_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
